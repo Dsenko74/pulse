@@ -40,9 +40,31 @@
 			height: 30px;
 			font-size: 13px;
 		}
+        &_submit {
+            width: 100%;
+            height: 58px;
+            font-weight: 500;
+            font-size: 16px;
+        } // Спитати у Іллі чому при зміні розміру не працює &_submit з файлу _buttons.scss. Чому необхідно повторювати в медіа файлі?
 	}
+    .title {
+        &_left {
+            font-size: 36px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    .consultation {
+        &__descr {
+            text-align: center;
+        }
+    }
+    .feed-form {
+        margin: 0 auto;
+        margin-top: 30px;
+    }
 }
-@media only screen and (max-width: 767px) {
+@media (max-width: 767px) {
 	.header {
 		&__logo {
 			width: 150px;
@@ -80,7 +102,7 @@
 		&__wrapper {
 			margin-top: 50px;
 		}
-		&__subheader {
+		&__subtitle {
 			margin-top: 25px;
 			font-size: 15px;
 		}
@@ -101,13 +123,52 @@
 			height: 30px;
 			font-size: 10px;
 		}
-	}
-/*     br {
-		display: none;
-	} */
+        &_submit {
+            width: 100%;
+            height: 58px;
+            font-weight: 500;
+            font-size: 16px;
+        }
+    }
 }
-@media only screen and (max-width: 575px) {
-
+@media (max-width: 575px) {
+    br {
+		display: none;
+	}
+    .header {
+        flex-direction: column;
+        align-items: center;
+        &__official {
+            margin-top: 5px;
+        }
+        &__contacts {
+            align-items: center;
+        }
+    }
+    .promo {
+        padding: 21px 0 50px 0;
+        &__wrapper{
+            margin-top: 50px;
+        }
+        &__header {
+            font-size: 24px;
+        }
+        &__subheader {
+            font-size: 14px;
+            margin-top: 13px;
+        }
+        &__icons {
+            flex-direction: column;
+        }
+        &__icon {
+            width: 200px;
+            font-size: 16px;
+            line-height: 16px;
+            img {
+                margin-bottom: 10px;
+            }
+        }
+    }
 	.advantages {
 		&__descr {
 			font-size: 10px;
@@ -115,12 +176,55 @@
         &__wrapper {
             flex-direction: column;
         }
-        &__subheaader {
+        &__subtitle {
             font-size: 25px;
         }
         &__descr {
             font-size: 13px;
         }
 	}
+    .title {
+        &_left {
+            font-size: 24px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    .feed-form {
+        width: 240px;
+    }
+    .button {
+        &_submit {
+            height: 40px;
+            font-size: 13px;
+        }
+    }
 }
+@media (max-width: 320px) {
+    br {
+		display: none;
+	}
+    .title {
+        &_left {
+            font-size: 20px;
+            color: #FFFFFF;
+            text-align: center;
+        }
+    }
+    .consultation {
+        &__descr {
+            font-size: 14px;
+        }
+    }
+    .feed-form {
+        width: 240px;
+    }
+    .button {
+        &_submit {
+            height: 40px;
+            font-size: 13px;
+        }
+    }
+}
+
 
