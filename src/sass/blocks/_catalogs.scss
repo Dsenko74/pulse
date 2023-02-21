@@ -1,0 +1,172 @@
+.catalog {
+    padding-bottom: 100px;
+    &__tabs {
+        margin-top: 70px;
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0; // вимикаємо margin за замовчуванням
+        margin-bottom: 0;
+    }
+    &__tab {
+        width: 220px;
+        height: 50px;
+        border: 2px solid #D0D0D0;
+        font-weight: 400;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #6B6B6B;
+        text-align: center;
+        line-height: 48px; // цією властивістю вирівнюємо текст по центру по вертикалі
+        transform: skewX(-25deg);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: 0.5s all;
+        &:hover {
+            box-shadow: 3px 3px 20px $main-color;
+            border: none;
+        }
+        div {
+            transform: skewX(25deg);
+        }
+        &_active {
+            color: #fff ;
+            background-color:  $main-color;
+            border: none;
+        }
+    }
+    &__content {
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &-item {
+        width: 300px;
+        min-height: 440px;
+        border: 2px solid #E8E8E8;
+        padding: 20px 20px 26px 20px;
+        overflow: hidden; //це властивість скриває неактивний елемент
+        margin-bottom: 20px;
+        &__img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%; //це робимо щоб майбутня img  не вилазила за межі
+            height: 140px;
+        }
+        &__subtitle {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 16px;
+            text-align: center;
+            color: #0D0D0D;
+        }
+        &__descr {
+            margin-top: 16px;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 22px;
+            text-align: center;
+            color: #0D0D0D;
+        }
+        &__link {
+            display: block;
+            margin-top: 17px;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            color: $main-color;
+            text-align: center;
+            &:hover {
+                color: $main-color;
+            }
+        }
+        &__back {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(calc(-50% - 19px));
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration-line: underline;
+            text-transform: uppercase;
+            color: $main-color;
+            text-align: center;
+            &:hover {
+                color: $main-color;
+            }
+        }
+
+        hr {
+            background-color: #E8E8E8;
+            margin: 20px 0;
+            border-bottom: none; // hr має border, для того щоб його висота була 1px прибираємо margin-border
+        }
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__old-price {
+            font-weight: 300;
+            font-size: 14px;
+            text-decoration-line: line-through;
+            color: #555555;
+        }
+        &__price {
+            font-weight: 700;
+            font-size: 20px;
+            color: #050505;
+        }
+        &__wrapper {
+            display: flex;
+            width: calc(200% + 40px); // це ширина від батька, відповідно в двічі більша.
+        }
+        &__content {
+            width: 50%; // а це вже ширина 50% від  самого wrapper
+            margin-right: 0px;
+            transform: translateX(-100%); // за допомогою transform та модифікатора активності ми двигаємо content та list, звернути увагу на маржини
+            transition: 0.5s all;
+            &_active {
+                transform: translateX(0%);
+                margin-right: 20px;
+            }
+        }
+        &__list {
+            position: relative;
+            width: 50%;
+            margin-left: 20px;
+            transform: translateX(0%);
+            padding-right: 20px; // не зрозумів для чого
+            margin-bottom: 0px;// коригування налаштувань за замовчуванням
+            padding-left: 19px; //спочатку верстки стояв 0, потім коли ел активний він заєзжає в item, і там вже встановлюємо 19px з макету
+            transition: 0.5s all;
+            list-style-type: none;
+            &_active {
+                transform: translateX(-100%);
+                margin-left: 0px;
+            }
+            li {
+                position: relative;
+                font-weight: 300;
+                font-size: 14px;
+                line-height: 21px;
+                color: #555555;
+                margin-bottom: 20px;
+                &:before { //червоний квадратік
+                    content: '';
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color: $main-color;
+                    left: -14px;
+                    top: 7px;
+                }
+            }
+        }
+    }
+}

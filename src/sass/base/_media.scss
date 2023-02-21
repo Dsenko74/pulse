@@ -63,6 +63,17 @@
         margin: 0 auto;
         margin-top: 30px;
     }
+    .carousel {
+        &__inner {
+            width: 90%;
+            img {
+                display: block;
+                margin: 0 auto;
+                width: 50vw;
+            }
+        }
+
+    }
 }
 @media (max-width: 767px) {
 	.header {
